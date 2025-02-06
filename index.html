@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pacerechner</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://raw.githubusercontent.com/lukaseichenberg/pacerechner/refs/heads/main/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>Pacerechner</h1>
+
+  <form id="pace-form">
+    <label class="unit" for="unit">Einheit:</label>
+    <select class="unit" id="unit" onchange="updateLabels()">
+      <option value="km" selected>Kilometer</option>
+      <option value="mi">Meilen</option>
+    </select>
+    <br>
+    <input type="number" id="distance" value="10" step="any">
+    <label for="distance">Distanz (in km oder Meilen)</label>
+    <br>
+    <input type="text" id="time" value="00:50:00">
+    <label id="time-label" for="time">Zeit (hh:mm:ss)</label>
+    <br>
+    <div class="form-row">
+        <p>oder</p>
+        <input type="number" id="speed" value="12" step="any">
+        <label id="speed-label" for="speed">Tempo (in km/h)</label>
+    </div>
+    <br>
+    <div class="form-row">
+        <p>oder</p>
+        <input type="text" id="pace" value="05:00">
+        <label id="pace-label" for="pace">Tempo (min/km)</label>
+    </div>
+    <br>
+    <button type="button" id="calculate-button">Pace berechnen</button>
+  </form>
+
+  <div class="results" id="results">
+    <p><span class="distance">5 km:</span> <span class="time">00:12:30</span></p>
+    <p><span class="distance">10 km:</span> <span class="time">00:25:00</span></p>
+    <p><span class="distance">Halbmarathon:</span> <span class="time">00:52:45</span></p>
+    <p><span class="distance">Marathon:</span> <span class="time">01:45:29</span></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
